@@ -1,0 +1,25 @@
+#!/usr/bin/env sh 
+
+CURDIR=$PWD
+BUILDDIR="./build"
+
+if [ ! -d "${BUILDDIR}" ]; then 
+    echo "${BUILDDIR} Doesn't exist making..."
+    mkdir ${BUILDDIR}
+    if [ ! $? -eq 0 ]; then 
+	echo "Error making directory exit..."
+	exit 1;
+    else 
+	echo "${BUILDDIR} made"
+    fi 
+fi
+
+#enter build directory 
+cd $BUILDDIR
+
+cmake -G Ninja ../
+
+cmake --build ./
+
+#Return to original dir 
+cd $CURDIR

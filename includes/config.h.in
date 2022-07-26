@@ -1,0 +1,6 @@
+#pragma once
+
+#define cway_VERSION_MAJOR @cway_VERSION_MAJOR@
+#define cway_VERSION_MINOR @cway_VERSION_MINOR@
+
+#define cway_progname "cway"
